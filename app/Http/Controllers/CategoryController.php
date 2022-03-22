@@ -14,7 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        Area::where('status', '=','Active')
+            ->orderBy('name', 'ASC')
+            ->get();
     }
 
     /**
@@ -35,7 +37,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $value = [
+            'location_id' => $data['location_id'],
+            'name'=>$data['name'],
+            'status'=>$data['status']
+        ];
+        return Area::create($value);
     }
 
     /**
@@ -46,7 +53,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return Area:: where('id', $id)->first();
     }
 
     /**
@@ -57,7 +64,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return Area:: where('id', $id)->first();
     }
 
     /**
@@ -69,7 +76,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $value = [
+            'location_id' => $data['location_id'],
+            'name'=>$data['name'],
+            'status'=>$data['status']
+        ];
+        return Area:: where('id', $id)->update($value);
     }
 
     /**
@@ -80,6 +92,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        return Area::where('id', $id)->update([
+            'status'=>'Inactive'
+        ]);
     }
 }
