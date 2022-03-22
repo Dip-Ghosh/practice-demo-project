@@ -21,10 +21,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//category routes
+Route::resource('categories', App\Http\Controllers\CategoryController::class);
 
+//sub category routes
+Route::resource('sub-categories', App\Http\Controllers\SubCategoryController::class);
 
-Route::get('products', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
-
-Route::get('categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('categories.index');
-
-Route::get('subcategories', [App\Http\Controllers\SubCategoryController::class, 'index'])->name('subcategories.index');
+//product routes
+Route::resource('products', App\Http\Controllers\ProductController::class);
