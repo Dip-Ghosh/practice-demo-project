@@ -33,9 +33,27 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                            
+                              <li class="nav-item">
+                                <a class="nav-link" href="{{ route('products.index')}}">Product</a>
+                              </li>
+    
+                              <li class="nav-item">
+                                <a class="nav-link" href="{{ route('categories.index')}}">Category</a>
+                              </li>
+    
+                              <li class="nav-item">
+                                <a class="nav-link" href="{{ route('subcategories.index')}}">Sub-Category</a>
+                              </li>
+                              
+      
+                            </ul>
+                            
+                          </div>    
                     </ul>
-
+                  
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->

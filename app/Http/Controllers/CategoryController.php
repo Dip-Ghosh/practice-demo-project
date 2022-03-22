@@ -14,9 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        Area::where('status', '=','Active')
-            ->orderBy('name', 'ASC')
-            ->get();
+        return view('category');
+
     }
 
     /**
